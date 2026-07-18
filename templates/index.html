@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Email Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <h1>Phishing Email Detection</h1>
+
+        <p class="subtitle">
+            Detect whether an email is <b>Safe</b> or <b>Phishing</b> using
+            Machine Learning.
+        </p>
+
+        <form id="emailForm">
+
+            <label>Email Content</label>
+
+            <textarea
+                id="emailText"
+                placeholder="Paste your email content here..."
+                rows="10"
+                required></textarea>
+
+            <button type="submit" id="checkBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Analyze Email
+            </button>
+
+        </form>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Analyzing Email...</p>
+        </div>
+
+        <div id="resultCard" class="result hidden">
+
+            <h2>Prediction Result</h2>
+
+            <div class="prediction">
+                <span id="prediction">Waiting...</span>
+            </div>
+
+            <div class="confidence">
+
+                <label>Confidence</label>
+
+                <div class="progress">
+
+                    <div class="progress-bar" id="progressBar"></div>
+
+                </div>
+
+                <span id="confidenceText">0%</span>
+
+            </div>
+
+        </div>
+
+        <div class="features">
+
+            <h3>Model Checks</h3>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-link"></i>
+                    Suspicious URLs
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Phishing Keywords
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    Email Content
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-lock"></i>
+                    Machine Learning Prediction
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

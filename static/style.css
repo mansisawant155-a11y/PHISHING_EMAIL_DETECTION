@@ -1,0 +1,471 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#050816;
+    color:#ffffff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   ANIMATED BACKGROUND
+=========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#00d9ff20,transparent 45%),
+    radial-gradient(circle at bottom,#008cff20,transparent 40%),
+    #050816;
+    z-index:-2;
+}
+
+.background::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background-image:
+    linear-gradient(rgba(0,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,255,.05) 1px,transparent 1px);
+    background-size:40px 40px;
+    animation:gridMove 18s linear infinite;
+}
+
+@keyframes gridMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-40px);
+    }
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.card{
+
+    width:900px;
+    max-width:100%;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:
+    0 0 25px rgba(0,200,255,.20),
+    0 0 70px rgba(0,120,255,.08);
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 30px #00d9ff55,
+    0 0 80px #008cff33;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#0b1025;
+
+    color:#00d9ff;
+
+    font-size:42px;
+
+    box-shadow:0 0 25px #00d9ff;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 15px #00d9ff;
+    }
+
+    50%{
+        box-shadow:0 0 40px #00d9ff;
+    }
+
+    100%{
+        box-shadow:0 0 15px #00d9ff;
+    }
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+h1{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-size:34px;
+
+    color:#00d9ff;
+}
+
+.subtitle{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    color:#cfd8dc;
+
+    line-height:1.8;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+form{
+
+    margin-top:35px;
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    color:#7ce8ff;
+}
+
+textarea{
+
+    width:100%;
+
+    resize:none;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:#0c1328;
+
+    border:2px solid transparent;
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+textarea:focus{
+
+    border-color:#00d9ff;
+
+    box-shadow:0 0 15px #00d9ff55;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(90deg,#00d9ff,#007bff);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    overflow:hidden;
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px #00d9ff,
+    0 0 50px #008cff;
+}
+
+button i{
+
+    margin-right:8px;
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+.loading{
+
+    margin-top:30px;
+
+    text-align:center;
+}
+
+.spinner{
+
+    width:60px;
+
+    height:60px;
+
+    border:6px solid rgba(255,255,255,.2);
+
+    border-top:6px solid #00d9ff;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+    }
+}
+
+.hidden{
+
+    display:none;
+}
+
+/* ===========================
+   RESULT
+=========================== */
+
+.result{
+
+    margin-top:35px;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:#091120;
+
+    border:1px solid #00d9ff40;
+}
+
+.result h2{
+
+    text-align:center;
+
+    color:#00d9ff;
+}
+
+.prediction{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+}
+
+.progress{
+
+    width:100%;
+
+    height:18px;
+
+    background:#1f2937;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-top:15px;
+}
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#00ff99,#00d9ff);
+
+    transition:1s;
+}
+
+#confidenceText{
+
+    display:block;
+
+    margin-top:10px;
+
+    text-align:right;
+
+    font-weight:bold;
+
+    color:#00e5ff;
+}
+
+/* ===========================
+   FEATURES
+=========================== */
+
+.features{
+
+    margin-top:40px;
+}
+
+.features h3{
+
+    color:#00d9ff;
+
+    margin-bottom:18px;
+}
+
+.features ul{
+
+    list-style:none;
+}
+
+.features li{
+
+    background:#0d1730;
+
+    padding:14px 18px;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.features li:hover{
+
+    transform:translateX(8px);
+
+    background:#132346;
+
+    box-shadow:0 0 15px rgba(0,217,255,.25);
+}
+
+.features i{
+
+    color:#00d9ff;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.card{
+
+padding:25px;
+}
+
+h1{
+
+font-size:28px;
+}
+
+button{
+
+font-size:16px;
+}
+
+.prediction{
+
+font-size:22px;
+}
+
+.logo{
+
+width:70px;
+height:70px;
+font-size:32px;
+}
+
+}
